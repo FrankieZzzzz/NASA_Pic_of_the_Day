@@ -6,12 +6,55 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/95ae3d12b8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@3.0.0/reset.min.css" type="text/css" />
     <link rel="stylesheet" href="/src/css/style.css" />
     <title>APOD</title>
   </head>
   <body>
-    <h1>hello</h1>
+    <main>
+      <!-- header -->
+      <header id="nasa__header">
+        <nav class="nasa__headerBox">
+          <ul class="nasa__headerList">
+            <li class="nasa__desktopTime">
+              <p>12:30:45</p>
+            </li>
+            <li>
+              <img src="./src/assets/favicon-192 (1).png" alt="nasa_logo" />
+            </li>
+            <li class="nasa__searchBar">
+              <input type="text" placeholder="search" />
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <!-- text tile -->
+      <section id="nasa__title">
+        <div class="nasa__titleBox">
+          <ul class="nasa__titleText">
+            <li>
+              <h1>ASTRONOMY PICTURE <span>OF THE DAY</span></h1>
+            </li>
+            <li>
+              <p>IMAGE NAME OR INTRO</p>
+            </li>
+            <li>
+              <button>VIEW DETAIL</button>
+            </li>
+            <li>
+              <p>12:30:45</p>
+            </li>
+          </ul>
+        </div>
+        <figure id="nasa__imageBox">
+          <div class="nasa__image"></div>
+          <figcaption>Image name or intro</figcaption>
+          <button>Learn More</button>
+        </figure>
+      </section>
+    </main>
 
     <script src="/src/js/main.js"></script>
   </body>
