@@ -37,8 +37,10 @@
             <li>
               <h1>ASTRONOMY PICTURE <span>OF THE DAY</span></h1>
             </li>
-            <li>
-              <p>IMAGE NAME OR INTRO</p>
+            <li class="nasa__detailBox">
+              <div>TItle: <span class="nasa__title"></span></div>
+              <div>Copy Right: <span class="nasa__copyRight"></span></div>
+              <div>Date: <span class="nasa__date"></span></div>
             </li>
             <li>
               <button>VIEW DETAIL</button>
@@ -49,8 +51,14 @@
           </ul>
         </div>
         <figure id="nasa__imageBox">
-          <div class="nasa__image"></div>
-          <figcaption>Image name or intro</figcaption>
+          <div class="nasa__image">
+            <img src="./src/assets/bg_image.jpg" alt="defaulImage" />
+          </div>
+          <figcaption>
+            <div>TItle: <span class="nasa__title"></span></div>
+            <div>Copy Right: <span class="nasa__copyRight"></span></div>
+            <div>Date: <span class="nasa__date"></span></div>
+          </figcaption>
           <button>Learn More</button>
         </figure>
       </section>
