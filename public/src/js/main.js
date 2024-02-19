@@ -1,25 +1,22 @@
 // nasa api
-let nasaKey = '2eQZDUKEjjDEid7yyEcDVj6F6Oc0z5Z0Mdo7aU1J'
+let nasaKey = '2eQZDUKEjjDEid7yyEcDVj6F6Oc0z5Z0Mdo7aU1J';
 async function data(){
     try{
         const nasaApi = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${nasaKey}`);
         const nasaData = await nasaApi.json();
 
         console.log(nasaData);
-        let nasaDaliyImage = document.querySelector(".nasa__image")
-        .innerHTML = `<img src=${nasaData.url} alt=${nasaData.title}>`;
-
-        let nasaCopyRight = document.querySelectorAll(".nasa__copyRight");
-        nasaCopyRight.forEach(element => {
-            element.innerHTML = `${nasaData.copyright}`;
-        });
-
-        let nasaExplanation = document.querySelectorAll(".nasa__date");
-        nasaExplanation.forEach(element => {
-            element.innerHTML = `${nasaData.date}`;
-        })
-        
-        let nasaTitle = document.querySelectorAll(".nasa__title");
+        // nasaData have two media_type：video/image
+        if (nasaData.media_type === 'video') {
+            let nasaDaliyImage = document.querySelector(".nasa__image")
+            .innerHTML = `
+                <iframe width="100%" height="600px" src=${nasaData.url} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+            `;
+        }else{
+            let nasaDaliyImage = document.querySelector(".nasa__image")
+            .innerHTML = `<img src=${nasaData.url} alt=${nasaData.title}>`;
+        }
+        let nasaTitle = document.querySelectorAll(".nasa__apiTitle");
         nasaTitle.forEach(element => {
             element.innerHTML = `${nasaData.title}`;
         })
@@ -43,15 +40,18 @@ document.getElementById('nasa__selectDate').addEventListener('change', function(
         }else{
              _displaySelectDate()
         };
-
     })
     .catch( error => console.error(`Nope: ${error}`))
 })
 function _displaySelectDate(data){
     let nasaDaliyImage = document.querySelector(".nasa__image")
-    .innerHTML = `<img src=${data.url} alt=${data.title}>`;
-}
+        .innerHTML = `<img src=${data.url} alt=${data.title}>`;
 
+    let nasaTitle = document.querySelectorAll(".nasa__apiTitle");
+        nasaTitle.forEach(element => {
+            element.innerHTML = `${data.title}`;
+        })
+}
 
 // update time
 function _updateTime(){
@@ -67,4 +67,8 @@ function _updateTime(){
 
 let interval = setInterval(_updateTime, 1000)
 
-
+// set max date for canlendar
+document.addEventListener('DOMContentLoaded', function(){
+    let today = new Date().toISOString().slice(0,10);
+    document.getElementById('nasa__selectDate').setAttribute('max', today);
+})

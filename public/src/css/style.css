@@ -44,7 +44,7 @@ main{
 }
 .nasa__searchBar input{
     background: #ffffffa1;
-    padding: 10px 18px;
+    padding: 10px 22px;
     font-size: 11px;
 
     border: 1px solid var(--font-color);
@@ -68,7 +68,7 @@ main{
     padding-right: 10px;
 }
 .nasa__searchDate input{
-    padding: 5px 15px;
+    padding: 5px 18px;
     border-radius: 15px;
     border: 1px solid #082A39;
 
@@ -146,13 +146,13 @@ button{
 }
 @media screen and (min-width: 768px) {
     body {
-           background-color: #DCDEE5;
+        background-color: #DCDEE5;
         }
     main {
-            width: 75%;
-            margin: 0px auto;
-            margin-top: 10%;
-            box-shadow: var(--box-shadow);
+        width: 75%;
+        margin: 0px auto;
+        margin-top: 10%;
+        box-shadow: var(--box-shadow);
         }
     /* header css */
     #nasa__header {
@@ -172,17 +172,14 @@ button{
    /* text title area */
     #nasa__titleSection {
         width: 100%;
-        /* height: max-content; */
         height: 58vh;
         position: relative;
         background-image: url(../assets/bg_image.jpg);
         background-size: contain;
-        /* display: flex;
-        align-items: center; */
     }
     .nasa__titleBox{
         position: absolute;
-        left: 5%;
+        left: 3%;
         bottom: 30%;
         z-index: 10;
     }
@@ -217,7 +214,7 @@ button{
     }
     #nasa__imageBox {
         width: 75%;
-        padding: 4% 0px;
+        padding: 2% 0px;
         position: absolute;
         right: 0%;
     }
@@ -229,6 +226,9 @@ button{
     }
     #nasa__imageBox figcaption {
         display: none;
+    }
+    .nasa__apiTitle{
+        text-shadow: 1px 1px 0px #ffffff6c;
     }
     #nasa__imageBox button {
         display: none;
