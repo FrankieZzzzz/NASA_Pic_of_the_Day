@@ -7,8 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://kit.fontawesome.com/95ae3d12b8.js" crossorigin="anonymous"></script>
+    <!-- css reset -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@3.0.0/reset.min.css" type="text/css" />
     <link rel="stylesheet" href="/src/css/style.css" />
+    <!-- moment.js  -->
+    <!-- Moment Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.43/moment-timezone-with-data-10-year-range.min.js"></script>
     <title>APOD</title>
   </head>
   <body>
@@ -17,9 +22,7 @@
       <header id="nasa__header">
         <nav class="nasa__headerBox">
           <ul class="nasa__headerList">
-            <li class="nasa__desktopTime">
-              <p>12:30:45</p>
-            </li>
+            <li class="nasa__timeZoon"></li>
             <li>
               <img src="./src/assets/favicon-192 (1).png" alt="nasa_logo" />
             </li>
@@ -35,31 +38,25 @@
         <div class="nasa__titleBox">
           <ul class="nasa__titleText">
             <li>
-              <h1>ASTRONOMY PICTURE <span>OF THE DAY</span></h1>
+              <h1>ASTRONOMY <spam>PICTURE</spam><span>OF THE DAY</span></h1>
             </li>
             <li class="nasa__detailBox">
-              <div>TItle: <span class="nasa__title"></span></div>
+              <div><span class="nasa__title"></span></div>
               <div>Copy Right: <span class="nasa__copyRight"></span></div>
-              <div>Date: <span class="nasa__date"></span></div>
             </li>
+            <li></li>
             <li>
-              <button>VIEW DETAIL</button>
-            </li>
-            <li>
-              <p>12:30:45</p>
+              <p class="nasa__timeZoon">12:30:45</p>
             </li>
           </ul>
         </div>
         <figure id="nasa__imageBox">
-          <div class="nasa__image">
-            <img src="./src/assets/bg_image.jpg" alt="defaulImage" />
-          </div>
+          <div class="nasa__image"></div>
           <figcaption>
-            <div>TItle: <span class="nasa__title"></span></div>
+            <div><span class="nasa__title"></span></div>
             <div>Copy Right: <span class="nasa__copyRight"></span></div>
-            <div>Date: <span class="nasa__date"></span></div>
           </figcaption>
-          <button>Learn More</button>
+          <!-- <button>Learn More</button> -->
         </figure>
       </section>
     </main>

@@ -1,3 +1,4 @@
+// nasa api
 async function data(){
     let nasaKey = '2eQZDUKEjjDEid7yyEcDVj6F6Oc0z5Z0Mdo7aU1J'
     try{
@@ -26,4 +27,20 @@ async function data(){
         console.warn(`Nope: ${error}`);
     }
 }
-data()
+data();
+
+// update time
+function _updateTime(){
+    let currentTimezone = moment.tz.guess();
+    // console.log(moment().format());
+    let currentDate = moment().tz(currentTimezone).format("dddd MMMM/DD/YYYY, HH:mm:ss [<small>]A[</small>]")
+    // console.log(currentDate);
+    let showRealTime = document.querySelectorAll(".nasa__timeZoon");
+    showRealTime.forEach(thisTime => {
+    thisTime.innerHTML = currentDate
+ })
+}
+
+let interval = setInterval(_updateTime, 1000)
+
+
