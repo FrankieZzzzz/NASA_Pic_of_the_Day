@@ -26,28 +26,26 @@
             <li>
               <img src="./src/assets/favicon-192 (1).png" alt="nasa_logo" />
             </li>
-            <li class="nasa__searchBar">
-              <input type="text" placeholder="search" />
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </li>
+            <div class="nasa__searchDate">
+              <label>Choose a date:</label>
+              <input type="date" id="nasa__selectDate" name="nasa__selectDate" value="2024-02-18" />
+              <!-- <button id="nasa__selectBtn"><i class="fa-solid fa-magnifying-glass"></i></button> -->
+            </div>
           </ul>
         </nav>
       </header>
       <!-- text tile -->
-      <section id="nasa__title">
+      <section id="nasa__titleSection">
         <div class="nasa__titleBox">
           <ul class="nasa__titleText">
             <li>
-              <h1>ASTRONOMY <spam>PICTURE</spam><span>OF THE DAY</span></h1>
+              <h1>ASTRONOMY <span>PICTURE</span><span>OF THE DAY</span></h1>
             </li>
             <li class="nasa__detailBox">
               <div><span class="nasa__title"></span></div>
               <div>Copy Right: <span class="nasa__copyRight"></span></div>
             </li>
-            <li></li>
-            <li>
-              <p class="nasa__timeZoon">12:30:45</p>
-            </li>
+            <li class="nasa__timeZoon mobile_time">2024-02-18 - 23:34:52 PM</li>
           </ul>
         </div>
         <figure id="nasa__imageBox">
@@ -56,7 +54,6 @@
             <div><span class="nasa__title"></span></div>
             <div>Copy Right: <span class="nasa__copyRight"></span></div>
           </figcaption>
-          <!-- <button>Learn More</button> -->
         </figure>
       </section>
     </main>

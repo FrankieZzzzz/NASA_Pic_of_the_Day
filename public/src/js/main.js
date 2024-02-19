@@ -1,6 +1,6 @@
 // nasa api
+let nasaKey = '2eQZDUKEjjDEid7yyEcDVj6F6Oc0z5Z0Mdo7aU1J'
 async function data(){
-    let nasaKey = '2eQZDUKEjjDEid7yyEcDVj6F6Oc0z5Z0Mdo7aU1J'
     try{
         const nasaApi = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${nasaKey}`);
         const nasaData = await nasaApi.json();
@@ -29,11 +29,35 @@ async function data(){
 }
 data();
 
+// select date image
+document.getElementById('nasa__selectDate').addEventListener('change', function(event){
+    let selectDate = event.target.value;
+    // console.log(selectDate);
+    let selectUrl = `https://api.nasa.gov/planetary/apod?api_key=${nasaKey}&date=${selectDate}`;
+    fetch(selectUrl)
+    .then(response => response.json())
+    .then(data => { 
+        if(!data.error && data.url){
+            console.log(data);
+            _displaySelectDate(data)
+        }else{
+             _displaySelectDate()
+        };
+
+    })
+    .catch( error => console.error(`Nope: ${error}`))
+})
+function _displaySelectDate(data){
+    let nasaDaliyImage = document.querySelector(".nasa__image")
+    .innerHTML = `<img src=${data.url} alt=${data.title}>`;
+}
+
+
 // update time
 function _updateTime(){
     let currentTimezone = moment.tz.guess();
     // console.log(moment().format());
-    let currentDate = moment().tz(currentTimezone).format("dddd MMMM/DD/YYYY, HH:mm:ss [<small>]A[</small>]")
+    let currentDate = moment().tz(currentTimezone).format("YYYY-MM-DD - HH:mm:ss [<small>]A[</small>]")
     // console.log(currentDate);
     let showRealTime = document.querySelectorAll(".nasa__timeZoon");
     showRealTime.forEach(thisTime => {
